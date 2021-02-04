@@ -1,0 +1,16 @@
+{ 
+    "userList":
+    [{
+        "name": "Sergei",
+        "email": "qwe",
+        "phone": 123345
+    },{
+        "name": "Asam",
+        "email": "qweQ",
+        "phone": 456456456
+    },{
+        "name": "Julian",
+        "email": "qweQ",
+        "phone": 12456456456
+    }]
+}

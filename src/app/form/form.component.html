@@ -1,15 +1,28 @@
 <form [formGroup] = "profileForm" (ngSubmit)="onSubmit()">
-    
+
     <div class="">
-      <label>Name</label>
+      <label>Name:</label>
       <input type="text" formControlName="name" required>
     </div>
     
     <div>
-        <label>Email</label>
-        <input type="text" formControlName="email" required>
+        <label>Email:</label>
+        <input type="email" formControlName="email" required>
+    </div>
+    
+    <div>
+        <label>Phone:</label>
+        <input type="text" formControlName="phone" required>
     </div>
   
     <button>Send</button>
+
+    <p>
+        Form Status: {{ profileForm.status }}
+    </p>
+
+    <p>
+        Form Value: {{ profileForm.value | json }}
+    </p>
 
 </form>
