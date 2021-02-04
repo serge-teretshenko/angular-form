@@ -1,7 +1,12 @@
-<ul>
-    <li *ngFor="let user of users">
-        <p>Name: {{user?.name}}</p>
-        <p>Email: {{user?.email}}</p>
-        <p>Phone: {{user?.phone}}</p>
-    </li>
-</ul>
+<div>
+
+<h2>Github search</h2>
+    User name: <input type="text" [(ngModel)]="userName">
+    <button (click)="search()">Search</button>
+
+    <h3>Avatar: </h3>
+    <div *ngIf="response">
+        <img src="{{response.avatar_url}}" alt="{{response.userName}}">
+    </div>
+
+</div>

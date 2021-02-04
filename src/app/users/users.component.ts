@@ -1,20 +1,23 @@
-import { Component, OnInit} from '@angular/core';
-import { ConfigService } from '../config/config.service';
-import {User} from './user';
-   
+import { Component} from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 @Component({
     selector: 'users',
-    template: './users.component.html',
-    providers: [ConfigService]
+    templateUrl: './users.component.html',
+    styleUrls: ['./users.component.css']
 })
-export class UsersComponent implements OnInit { 
-     
-    user: User;
- 
-    constructor(private http: ConfigService){}
-      
-    ngOnInit(){
-          
-        this.http.get('assets/user.json').subscribe((data:User) => this.user=data);
-    }
+export class UsersComponent {
+
+    userName: string = "";
+    response: any;
+
+    constructor(private http: HttpClient){}
+
+   search() {
+      this.http.get('https://api.github.com/users/' + this.userName)
+      .subscribe((response) => {
+          this.response = response;
+          console.log(this.response);
+      })
+   }
 }
